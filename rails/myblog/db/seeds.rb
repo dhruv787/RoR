@@ -7,6 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Post.destroy_all
 Category.destroy_all
+Tag.destroy_all
+
+Tag.create(name: "javascript")
+Tag.create(name: "react")
+Tag.create(name: "ruby")
+Tag.create(name: "node")
 
 Category.create(title: "Programming")
 Category.create(title: "Web Development")
@@ -14,7 +20,7 @@ Category.create(title: "RoR")
 Category.create(title: "React")
 
 Category.all.each do |cat|
-    3.times do |i|
+    20.times do |i|
         Post.create(title: "Post #{i}", body: "Post body", category:cat)
     end
 end

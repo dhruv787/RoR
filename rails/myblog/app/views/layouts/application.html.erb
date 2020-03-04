@@ -7,15 +7,51 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
 
   <body>
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
   <div class="container">
-    <div class="header">
-    <%=link_to 'Posts', posts_path%>
-    <%=link_to 'Category', categories_path%>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Dhruv DWIVEDI</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">About Me</a>
+        <a class="p-2 text-dark" href="#">Contact</a>
+        <a class="p-2 text-dark" href="#">Projects</a>
+        <a class="p-2 text-dark" href="#">Resume</a>
+      </nav>
+      <% if user_signed_in?%>
+        <span class="badge badge-primary text-dark">Welcome <%= current_user.email%></span>
+        <%= link_to "Sign out", destroy_user_session_path,method: :delete, class: "btn btn-outline-primary"%>
+      <% else %>
+        <%= link_to "Log In", new_user_session_path,class: "p-2" %>
+        <%= link_to "Sign Up", new_user_registration_path,class: "p-2 btn btn-outline-primary" %>
+      <% end %>
+      <!--<a class="btn btn-outline-primary" href="#">Sign up</a> -->
     </div>
+    <div class="container">
+          <div class="row">
+            <div class="cl-md-3">
+                <ul class="list-group">
+                  <li class="list-group-item"> <%=link_to 'Posts', posts_path%> </li>
+                  <li class="list-group-item"> <%=link_to 'Category', categories_path%> </li>
+                  <li class="list-group-item"> <%=link_to 'Manage Tag', tags_path%> </li>
+                 
+                </ul>
+            </div>
+            <div class="cl-md-9">
+                <%= yield %>
+            </div>
+          </div>
+    </div>
+    
+    
   </div>
-    <%= yield %>
+     
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

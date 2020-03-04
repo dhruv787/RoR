@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :installs
+  resources :tags
+  devise_for :users
   resources :posts
   resources :categories
   root "posts#index"
