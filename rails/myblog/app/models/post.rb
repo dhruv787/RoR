@@ -10,7 +10,7 @@ class Post < ApplicationRecord
     if tags.blank?
       return
     end
-    
+
     self.tags = tags.split(",").map do |name|
       unless name.blank?
         Tag.where(name: name.strip).first_or_create!

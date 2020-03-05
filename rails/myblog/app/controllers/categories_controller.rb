@@ -7,6 +7,13 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def search
+    
+    if params.has_key?(:cat)
+        @posts = Category.find_by(:title =>params[:cat]).posts
+    end #if
+  end #search
+
   # GET /categories/1
   # GET /categories/1.json
   def show
@@ -72,4 +79,6 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:title)
   end
-end
+
+  
+end 
