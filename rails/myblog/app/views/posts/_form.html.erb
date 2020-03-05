@@ -16,20 +16,27 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+   <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all,:id, :title %>
+  <%= form.label :new_tag_id %>
+    <%= form.text_field :all_tags, placeholder: "Tags seperated with comma" %>
   </div>
 
   <div class="field">
     <%= form.label :tag_id %>
-    <%= form.collection_select :tag_ids, Tag.all,:id, :name, {include_blank: true}, {:multiple => true} %>
+    <%= form.collection_select :tag_ids, Tag.all, :id, :name, { include_blank: true }, { :multiple => true } %>
   </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.rich_text_area :body %>
+  </div>
+
+ 
 
   <div class="actions">
     <%= form.submit %>

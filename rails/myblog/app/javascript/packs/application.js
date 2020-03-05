@@ -15,3 +15,17 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+require("trix")
+require("@rails/actiontext")
+
+// window.jQuery = $;
+// window.$ = $;
+document.addEventListener("turbolinks:load", () => {
+    $("#post_tag_ids").change((e) => {
+        // alert(e.target.value);
+        let selected = $("#post_tag_ids option:selected")
+            .toArray().map(item => item.text).join();
+        $("#post_all_tags").val(selected);
+    });
+});

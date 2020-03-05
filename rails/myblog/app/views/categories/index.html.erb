@@ -1,6 +1,6 @@
 <h1>Categories</h1>
 
-<%= link_to 'New Category', new_category_path, class:"btn btn-primary" %>
+<%= link_to "New Category", new_category_path, class: "btn btn-primary" %>
 <table class=" table table-striped table-condensed">
   <thead>
     <tr>
@@ -14,10 +14,10 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.title %></td>
-        <td><%= category.posts.count %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to category.posts.count %></td>
+        <td><%= link_to "Show", category %></td>
+        <td><%= link_to "Edit", edit_category_path(category) %></td>
+        <td><%= link_to "Destroy", category, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>

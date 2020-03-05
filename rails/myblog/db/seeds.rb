@@ -20,7 +20,7 @@ Category.create(title: "RoR")
 Category.create(title: "React")
 
 Category.all.each do |cat|
-    20.times do |i|
-        Post.create(title: "Post #{i}", body: "Post body", category:cat)
-    end
+  20.times do |i|
+    Post.create(title: "Post #{i}", body: "Post body", category: cat)
+  end
 end

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Tags</h1>
-<%= link_to 'New Tag', new_tag_path, class:"btn btn-primary" %>
+<%= link_to "New Tag", new_tag_path, class: "btn btn-primary" %>
 <table class=" table table-striped table-condensed">
   <thead>
     <tr>
@@ -14,9 +14,9 @@
     <% @tags.each do |tag| %>
       <tr>
         <td><%= tag.name %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", tag %></td>
+        <td><%= link_to "Edit", edit_tag_path(tag) %></td>
+        <td><%= link_to "Destroy", tag, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
