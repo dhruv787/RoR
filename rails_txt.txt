@@ -1,0 +1,10 @@
+https://github.com/rajeshpillai/dass-react-tutorial
+
+rails g scaffold posts title:string body:text category:references - create forgien keys on rails
+rails routes - will give you all resources
+
+rails new react-rails --webpack=react // This is used to create new project with react
+
+Tutorials
+https://www.tutorialspoint.com/ruby/index.htm
+https://www.rubyguides.com/ruby-tutorial/

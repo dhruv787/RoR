@@ -22,4 +22,4 @@ end
 MathFunction.called_cnt=100
 puts MathFunction.double 5 #=>10
 puts MathFunction.double 10 #=>10
-puts MathFunction.times_called #=> 
+puts MathFunction.times_called #=> gen
